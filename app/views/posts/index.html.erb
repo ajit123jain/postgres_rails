@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<h1>Posts</h1>
+<div class="well">
+  <%= link_to 'New Email', post_send_email_path , remote: true, class: "btn btn-default" ,:id => "new_post" %>
+</div>
+<div class="new-post"></div>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Sender</th>
+      <th>Author Email</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+  <tbody class="author-index"> 
+   <%= render 'index' %>
+  </tbody>
+</table>
+<div id="post-modal" class="modal fade">
+</div>
+
+
