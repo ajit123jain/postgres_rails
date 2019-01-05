@@ -6,7 +6,6 @@
           <strong> Sign Up</strong>
         </div>
         <div class="panel-body">
-          <!-- <form role="form" action="#" method="POST"> -->
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= devise_error_messages! %>
             <fieldset>
@@ -38,7 +37,7 @@
                     <div class="input-group">
                       <% if @minimum_password_length %>
                         <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
-                      <% end %><br />
+                      <!-- <% end %><br /> -->
                       <span class="input-group-addon">
                         <i class="glyphicon glyphicon-lock"></i>
                       </span>
@@ -52,7 +51,6 @@
               </div>
             </fieldset>
           <% end %>  
-          <!-- </form> -->
         </div>
         <div class="panel-footer ">
           Already have an account! <b><%= render "devise/shared/links" %></b>
