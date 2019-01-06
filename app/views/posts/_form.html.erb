@@ -48,7 +48,6 @@
   
   $('.add_more_forms').on('click', function (e) {
     e.preventDefault()
-    tinymce.init({ selector:'textarea.tinymce' });
     var forms_count = $('.forms-div').find('.user_form').length
     var user_email_row = "<div class='form-group'><b style='color:#000;'>Receiver Email: </b><input type='text' name='user[" + forms_count + " ][email]' class = 'form-control'></div> "
 
