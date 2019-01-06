@@ -67,12 +67,14 @@ class PostsController < ApplicationController
     if user.present?
       params[:user].each do |key,val|
         post = Post.new
-        post.sender_email = user.email
-        post.receiver_email = val['email']
-        post.subject = val['subject']
-        post.content = val['content'] 
-        post.save!
-        UserNotifierMailer.post_submit(post).deliver!  
+        if user.email.present?
+          post.sender_email = user.email
+          post.receiver_email = val['email']
+          post.subject = val['subject']
+          post.content = val['content'] 
+          post.save!
+          UserNotifierMailer.post_submit(post).deliver!  
+        end
       end
     end
     @posts = Post.where(sender_email:user.email)

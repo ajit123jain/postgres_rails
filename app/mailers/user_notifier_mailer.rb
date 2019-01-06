@@ -17,8 +17,7 @@ class UserNotifierMailer < ApplicationMailer
   def post_submit(post)
     @user = post
     mail( :to => @user.receiver_email,
-    :subject => @user.subject,
-    :content => @user.content )
+    :subject => @user.subject)
     render :nothing => true
   end
 end
